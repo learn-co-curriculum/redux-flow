@@ -73,7 +73,7 @@ changeState(state, action)
 // => {count: 1}
 ```
 
-Ok, so if you copy and paste that code into a javascript console, you'll see that we the function works just as expect. The state and action are passed to our changeState function, which hits the 'INCREASE_COUNT' case statement.  Then it takes the state's count of zero, adds one to it, and returns a new object {count: 1}.  
+Ok, so if you copy and paste that code into a javascript console, you'll see that the function works just as we expect. The state and action are passed to our changeState function, which hits the 'INCREASE_COUNT' case statement.  Then it takes the state's count of zero, adds one to it, and returns a new object `{count: 1}`.  
 
 Now let's have this function respond to another action, decrease count.  Give it a shot, the answer is below.
 
@@ -143,3 +143,5 @@ As for the no side effects, there's something a pretty subtle going on in our re
 1. We hold our application's state in one plain old javascript object, and we update that state by passing both an action, and the old state to our reducer.  Our reducer returns to us our new state.
 2. So to change our state we (1) create an **action**, an action is just a plain object with a `type` key (2) and pass the action as an argument when we call the **reducer**, which is just a function with a switch/case statement, which (3) produces a new state.
 3. Our reducer is a pure function which means that given the same arguments of state and action, it will always produce the same new state.  Also it means that our reducer never updates the previous state, but rather creates a new state object.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/redux-flow'>Redux Flow</a> on Learn.co and start learning to code for free.</p>
