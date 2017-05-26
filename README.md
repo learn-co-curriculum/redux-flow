@@ -108,7 +108,7 @@ And let's give this function a name.  Because it is combining two pieces of info
 As you learn more about redux, things may become more complex.  Just remember that at the core of redux is always this flow.  An action gets sent to a reducer which then updates the state of the application.
 
 ## TWIST
-You may notice a problem.  Which is that while we can call the changeState reducer to increase the count from zero to one, if we call change state again we keep returning a count as one.  In other words, we are not persisting this change of state.  Just ignore this problem for now, we'll tackle it in an upcoming section.
+You may notice a problem.  Which is that while we can call the changeState reducer to increase the count from zero to one, if we call change state again we keep returning a count of one.  In other words, we are not persisting this change of state.  Just ignore this problem for now, we'll tackle it in an upcoming section.
 
 ## Reducers are pure functions
 
@@ -143,3 +143,5 @@ As for the no side effects, there's something a pretty subtle going on in our re
 1. We hold our application's state in one plain old javascript object, and we update that state by passing both an action, and the old state to our reducer.  Our reducer returns to us our new state.
 2. So to change our state we (1) create an **action**, an action is just a plain object with a `type` key (2) and pass the action as an argument when we call the **reducer**, which is just a function with a switch/case statement, which (3) produces a new state.
 3. Our reducer is a pure function which means that given the same arguments of state and action, it will always produce the same new state.  Also it means that our reducer never updates the previous state, but rather creates a new state object.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/redux-flow'>Redux Flow</a> on Learn.co and start learning to code for free.</p>
