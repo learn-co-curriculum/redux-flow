@@ -130,7 +130,7 @@ An important thing to note about reducers is that they are pure functions.  Let'
 1. Pure functions are only determined by their input values
 2. Pure Functions have no side effects.  By this we mean pure functions do not have any effect outside of the function.  They only return a value.
 
-> Note: The reason we like pure functions so much is because if a function has no effect outside of the object, and if the function always returns the same value given a specific input, this means that our functions become really predictable.  In addition, the lack of side effects means that the functions are also contained, and can be used safely without effecting the rest of your application.
+> Note: The reason we like pure functions so much is because if a function has no effect outside of the object, and if the function always returns the same value given a specific input, this means that our functions become really predictable.  In addition, the lack of side effects means that the functions are also contained, and can be used safely without affecting the rest of your application.
 
 Ok, so let's take these two characteristics of pure functions in turn, and ensure that we are adhering to them here.
 
@@ -143,3 +143,5 @@ As for the no side effects, there's something a pretty subtle going on in our re
 1. We hold our application's state in one plain old javascript object, and we update that state by passing both an action, and the old state to our reducer.  Our reducer returns to us our new state.
 2. So to change our state we (1) create an **action**, an action is just a plain object with a `type` key (2) and pass the action as an argument when we call the **reducer**, which is just a function with a switch/case statement, which (3) produces a new state.
 3. Our reducer is a pure function which means that given the same arguments of state and action, it will always produce the same new state.  Also it means that our reducer never updates the previous state, but rather creates a new state object.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/redux-flow'>Redux Flow</a> on Learn.co and start learning to code for free.</p>
