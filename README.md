@@ -72,7 +72,7 @@ changeState(state, action)
 // => {count: 1}
 ```
 
-Ok, so if you copy and paste that code into a javascript console, you'll see that we the function works just as expect. The state and action are passed to our changeState function, which hits the 'INCREASE_COUNT' case statement.  Then it takes the state's count of zero, adds one to it, and returns a new object {count: 1}.  
+Ok, so if you copy and paste that code into a javascript console, you'll see that the function works just as we expect. The state and action are passed to our changeState function, which hits the 'INCREASE_COUNT' case statement.  Then it takes the state's count of zero, adds one to it, and returns a new object `{count: 1}`.  
 
 Now let's have this function respond to another action, decrease count.  Give it a shot, the answer is below.
 
