@@ -16,7 +16,7 @@ let state = {count: 0}
 let action = {type: 'INCREASE_COUNT'}
 ```
 
-Somehow I want to send this action to the state so that at the end my state is updated to look at the following:
+Somehow I want to send this action to the state so that at the end my state is updated to look like the following:
 
 `state -> {count: 1}`
 
