@@ -113,7 +113,7 @@ Action -> Reducer -> Updated State
 As you learn more about redux, things may become more complex.  Just remember that at the core of redux is always this flow.  An action gets sent to a reducer which then updates the state of the application.
 
 ## TWIST
-You may notice a problem.  Which is that while we can call the changeState reducer to increase the count from zero to one, if we call change state again we keep returning a count as one.  In other words, we are not persisting this change of state.  Just ignore this problem for now, we'll tackle it in an upcoming section.
+You may notice a problem.  Which is that while we can call the changeState reducer to increase the count from zero to one, if we call change state again we keep returning a count of one.  In other words, we are not persisting this change of state.  Just ignore this problem for now, we'll tackle it in an upcoming section.
 
 ## Reducers are pure functions
 
