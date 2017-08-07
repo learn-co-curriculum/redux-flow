@@ -135,7 +135,7 @@ An important thing to note about reducers is that they are pure functions.  Let'
 1. Pure functions are only determined by their input values
 2. Pure Functions have no side effects.  By this we mean pure functions do not have any effect outside of the function.  They only return a value.
 
-> Note: The reason we like pure functions so much is because if a function has no effect outside of the object, and if the function always returns the same value given a specific input, this means that our functions become really predictable.  In addition, the lack of side effects means that the functions are also contained, and can be used safely without effecting the rest of your application.
+> Note: The reason we like pure functions so much is because if a function has no effect outside of the object, and if the function always returns the same value given a specific input, this means that our functions become really predictable.  In addition, the lack of side effects means that the functions are also contained, and can be used safely without affecting the rest of your application.
 
 Ok, so let's take these two characteristics of pure functions in turn, and ensure that we are adhering to them here.
 
