@@ -143,4 +143,7 @@ As for the 'no side effects' characteristic, there's something pretty subtle goi
 2. So to change our state we (1) create an **action**, an action is just a plain object with a `type` key (2) and pass the action as an argument when we call the **reducer**, which is just a function with a switch/case statement, which (3) produces a new state.
 3. Our reducer is a pure function which means that given the same arguments of state and action, it will always produce the same new state. Also it means that our reducer never updates the previous state, but rather creates a new state object.
 
+## Resources
+* [How Redux Works](https://daveceddia.com/how-does-redux-work/)
+
 <p class='util--hide'>View <a href='https://learn.co/lessons/redux-flow'>Redux Flow</a> on Learn.co and start learning to code for free.</p>
