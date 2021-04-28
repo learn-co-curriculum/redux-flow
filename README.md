@@ -91,7 +91,7 @@ changeState(state, action)
 
 Ok, so if you copy and paste that code into a JavaScript console, you'll see
 that the function works just as we'd expect. The state and action are passed to
-our `changeState function`, which hits the `'INCREASE_COUNT'` case statement.
+our `changeState` function, which hits the `'INCREASE_COUNT'` case statement.
 Then it takes the state's count of zero, adds one to it, and returns a new
 object `{count: 1}`.
 
@@ -182,7 +182,7 @@ we are adhering to them here.
 Ok, so the first characteristic of pure functions means that given the same
 input of the function, I will always receive the same output from that function.
 That seems to hold, given a specific state object like `{count: 2}` and an
-action object like `{type: 'DECREASE_COUNT'}` will I always get back the same
+action object like `{type: 'DECREASE_COUNT'}` - will I always get back the same
 value? Yes. Given those two arguments, the output will always be `{count: 1}`.
 
 As for the 'no side effects' characteristic, there's something pretty subtle
@@ -200,10 +200,10 @@ function by not changing any value that is defined outside of the function.
 update that state by passing both an action and the old state to our reducer.
 Our reducer returns to us our new state.
 2. So to change our state we (1) create an action (an **action** is just a plain 
-object with a type key); and (2) and pass the action as an argument when we call 
+object with a `type` key); and (2) pass the action as an argument when we call 
 the **reducer** (which is just a function with a switch/case statement). This 
 produces a new state.
-3. Our reducer is a pure function which means that given the same arguments of
+1. Our reducer is a pure function which means that given the same arguments of
 state and action, it will always produce the same new state. Also it means that
 our reducer never updates the previous state, but rather creates a new state
 object.
