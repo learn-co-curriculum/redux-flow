@@ -139,7 +139,7 @@ As you learn more about redux, things may become more complex. Just remember
 that at the core of redux is always this flow. An action gets sent to a reducer
 which then updates the state of the application.
 
-# TWIST
+## TWIST
 
 You may notice a problem. While we can call the changeState reducer to increase
 the count from zero to one, if we call change state again we keep returning a
