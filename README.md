@@ -4,9 +4,9 @@
 
 In this lesson, you will learn the following:
 
-* Learn how pure functions update our application state.
-* Learn the fundamentals of the redux flow.
-* Learn how to adhere to the constraints of a pure function.
+- Learn how pure functions update our application state.
+- Learn the fundamentals of the redux flow.
+- Learn how to adhere to the constraints of a pure function.
 
 ## Review
 
@@ -17,8 +17,8 @@ updates our state.
 Let's take a look at an example:
 
 ```js
-let state = {count: 0}
-let action = {type: 'INCREASE_COUNT'}
+let state = { count: 0 };
+let action = { type: "INCREASE_COUNT" };
 ```
 
 Somehow I want to send this action to the state so that at the end our state is
@@ -34,8 +34,8 @@ Here's what it could look like:
 
 ```js
 function changeState(state, action) {
-  if (action.type === 'INCREASE_COUNT') {
-    return {count: state.count + 1 }
+  if (action.type === "INCREASE_COUNT") {
+    return { count: state.count + 1 };
   }
 }
 ```
@@ -52,10 +52,10 @@ could become very messy with a bunch of `if`s and `else if`s. Instead, it is
 customary to use a `switch case` statement.
 
 ```js
-function changeState(state, action){
+function changeState(state, action) {
   switch (action.type) {
-    case 'INCREASE_COUNT':
-      return {count: state.count + 1}
+    case "INCREASE_COUNT":
+      return { count: state.count + 1 };
   }
 }
 ```
@@ -68,10 +68,10 @@ change the state we never return `null` or `undefined`. We'll cover this by
 adding a `default` case to our function.
 
 ```js
-function changeState(state, action){
+function changeState(state, action) {
   switch (action.type) {
-    case 'INCREASE_COUNT':
-      return {count: state.count + 1}
+    case "INCREASE_COUNT":
+      return { count: state.count + 1 };
     default:
       return state;
   }
@@ -82,10 +82,10 @@ This way, no matter what, when accessing the Redux state we'll always get some
 form of the state back.
 
 ```js
-let state = {count: 0}
-let action = {type: 'INCREASE_COUNT'}
+let state = { count: 0 };
+let action = { type: "INCREASE_COUNT" };
 
-changeState(state, action)
+changeState(state, action);
 // => {count: 1}
 ```
 
@@ -98,25 +98,24 @@ object `{count: 1}`.
 Now let's have this function respond to another action, decrease count. Give it
 a shot, the answer is below.
 
-
 ```js
-function changeState(state, action){	  
+function changeState(state, action) {
   switch (action.type) {
-    case 'INCREASE_COUNT':
-      return {count: state.count + 1}
-    case 'DECREASE_COUNT':
-      return {count: state.count - 1}
+    case "INCREASE_COUNT":
+      return { count: state.count + 1 };
+    case "DECREASE_COUNT":
+      return { count: state.count - 1 };
     default:
       return state;
   }
 }
 
-let state = {count: 0}
+let state = { count: 0 };
 
-changeState(state, {type: 'INCREASE_COUNT'})
+changeState(state, { type: "INCREASE_COUNT" });
 // => {count: 1}
 
-changeState(state, {type: 'DECREASE_COUNT'})
+changeState(state, { type: "DECREASE_COUNT" });
 // => {count: -1}
 ```
 
@@ -149,12 +148,12 @@ tackle how this works in an upcoming section.
 ## Reducers are pure functions
 
 ```js
-function reducer(state, action){	  
+function reducer(state, action) {
   switch (action.type) {
-    case 'INCREASE_COUNT':
-      return {count: state.count + 1}
-    case 'DECREASE_COUNT':
-      return {count: state.count - 1}
+    case "INCREASE_COUNT":
+      return { count: state.count + 1 };
+    case "DECREASE_COUNT":
+      return { count: state.count - 1 };
     default:
       return state;
   }
@@ -167,14 +166,14 @@ remember the characteristics of pure functions:
 1. Pure functions are only determined by their input values
 
 2. Pure Functions have no side effects. By this we mean pure functions do not have
-any effect outside of the function. They only return a value.
+   any effect outside of the function. They only return a value.
 
 > Note: The reason we like pure functions so much is because if a function has
-no effect outside of the object, and if the function always returns the same
-value given a specific input, this means that our functions become really
-predictable. In addition, the lack of side effects means that the functions are
-also contained, and can be used safely without affecting the rest of your
-application.
+> no effect outside of the object, and if the function always returns the same
+> value given a specific input, this means that our functions become really
+> predictable. In addition, the lack of side effects means that the functions are
+> also contained, and can be used safely without affecting the rest of your
+> application.
 
 Let's take these two characteristics of pure functions in turn, and ensure that
 we are adhering to them here.
@@ -197,15 +196,13 @@ function by not changing any value that is defined outside of the function.
 ## Summary
 
 1. We hold our application's state in one plain old JavaScript object, and we
-update that state by passing both an action and the old state to our reducer.
-Our reducer returns to us our new state.
-2. So to change our state we (1) create an action (an **action** is just a plain 
-object with a `type` key); and (2) pass the action as an argument when we call 
-the **reducer** (which is just a function with a switch/case statement). This 
-produces a new state.
-1. Our reducer is a pure function which means that given the same arguments of
-state and action, it will always produce the same new state. Also it means that
-our reducer never updates the previous state, but rather creates a new state
-object.
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/redux-flow'>Redux Flow</a> on Learn.co and start learning to code for free.</p>
+   update that state by passing both an action and the old state to our reducer.
+   Our reducer returns to us our new state.
+2. So to change our state we (1) create an action (an **action** is just a plain
+   object with a `type` key); and (2) pass the action as an argument when we call
+   the **reducer** (which is just a function with a switch/case statement). This
+   produces a new state.
+3. Our reducer is a pure function which means that given the same arguments of
+   state and action, it will always produce the same new state. Also it means that
+   our reducer never updates the previous state, but rather creates a new state
+   object.
